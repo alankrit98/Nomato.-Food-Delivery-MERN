@@ -23,7 +23,7 @@ const Verify = () => {
 
     useEffect(() => {
         verifyPayment();
-    })
+    }, [success, orderId])
 
     console.log(success, orderId);
 
