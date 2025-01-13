@@ -20,7 +20,11 @@ A responsive and interactive Food Delivery Site designed to provide users with a
 5. **Order History**
    - Track past orders and view order details in the "My Orders" section.
 
-6. **Payment Integration**
+6. **Admin Panel**
+   - Change and review the status of orders.
+   - View details of users who made orders.
+
+7. **Payment Integration**
    - Integration with payment gateway to process orders.
 
 ## Technologies Used
@@ -35,6 +39,11 @@ A responsive and interactive Food Delivery Site designed to provide users with a
 - **Node.js**: Server-side runtime environment.
 - **Express.js**: Backend framework for API development.
 - **MongoDB**: Database for storing user data, orders, and menu items.
+
+### Admin Panel
+- **React.js**: For creating an admin dashboard.
+- **Axios**: For API communication.
+- **CSS**: For styling the admin interface.
 
 ### Additional Tools
 - **Vite**: Development server and build tool for React.
@@ -83,7 +92,14 @@ Ensure you have the following installed:
    npm run dev
    ```
 
-7. Open the application in your browser:
+7. Start the admin panel:
+   Navigate to the `admin` folder and run:
+   ```bash
+   npm install
+   npm start
+   ```
+
+8. Open the application in your browser:
    ```
    http://localhost:5173
    ```
@@ -105,25 +121,41 @@ Ensure you have the following installed:
 ### Orders
 - `POST /api/order/verify`: Verify the order after payment.
 - `GET /api/order/list`: Fetch the list of past orders.
+- `GET /api/admin/orders`: Fetch all orders (Admin only).
+- `POST /api/admin/orders/update`: Update order status (Admin only).
 
 ## Folder Structure
 ```
 food-delivery-site/
-├── public/
-├── src/
-│   ├── components/
-│   │   ├── Navbar/
-│   │   ├── Cart/
-│   │   └── Order/
-│   ├── pages/
-│   │   ├── Home/
-│   │   ├── Orders/
-│   │   └── Verify/
-│   ├── context/
-│   │   └── StoreContext.js
-│   ├── App.jsx
-│   └── index.jsx
-├── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar/
+│   │   │   ├── Cart/
+│   │   │   └── Order/
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Orders/
+│   │   │   └── Verify/
+│   │   ├── context/
+│   │   │   └── StoreContext.js
+│   │   ├── App.jsx
+│   │   └── index.jsx
+│   ├── package.json
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── package.json
+├── admin/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── App.jsx
+│   ├── package.json
 ├── .env
 └── README.md
 ```
